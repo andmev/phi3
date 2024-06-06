@@ -3,20 +3,20 @@
         "name": "dataset_default_train",
         "type": "HuggingfaceContainer",
         "user_script": "user_script.py",
-        "load_dataset_config": {
+        "params_config": {
             "type": "load_tiny_code_dataset",
-            "params_config": {
+            "params": {
                 "data_name": "medvediev/interview",
                 "split": "train",
                 "language": "Python",
                 "token": true
-            }
-        },
-        "pre_process_data_config": {
-            "params_config": {
-                "corpus_strategy": "join",
-                "text_template": "### Question: {input} \n### Answer: {output}",
-                "source_max_len": 1024
+            },
+            "component_kwargs": {
+                "pre_process_data": {
+                    "corpus_strategy": "join",
+                    "text_template": "### Question: {input} \n### Answer: {output}",
+                    "source_max_len": 1024
+                }
             }
         }
     }
