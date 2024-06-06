@@ -5,12 +5,10 @@
         "user_script": "user_script.py",
         "params_config": {
             "type": "load_tiny_code_dataset",
-            "params": {
-                "data_name": "medvediev/interview",
-                "split": "train",
-                "language": "Python",
-                "token": true
-            },
+            "data_name": "medvediev/interview",
+            "split": "train",
+            "language": "Python",
+            "token": true,
             "component_kwargs": {
                 "pre_process_data": {
                     "corpus_strategy": "join",
