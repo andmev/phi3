@@ -3,7 +3,7 @@
         "type": "PyTorchModel",
         "config": {
             "hf_config": {
-                "model_name": "medvediev/unsloth_f16_model",
+                "model_name": "medvediev/unsloth_model_16bit",
                 "task": "text-generation",
                 "from_pretrained_args": {
                     "trust_remote_code": true
