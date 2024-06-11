@@ -2,18 +2,19 @@
     {
         "name": "dataset_default_train",
         "type": "HuggingfaceContainer",
-        "user_script": "user_script.py",
         "params_config": {
-            "type": "load_tiny_code_dataset",
-            "data_name": "medvediev/interview",
+            "data_name": "json", 
+            "data_files":"dataset/interview.json",
             "split": "train",
-            "language": "Python",
-            "token": true,
             "component_kwargs": {
                 "pre_process_data": {
+                    "dataset_type": "corpus",
+                    "text_cols": ["input","output"],
+                    "text_template": "<|user|>\n{input}<|end|>\n<|assistant|>\n{output}<|end|>",
                     "corpus_strategy": "join",
-                    "text_template": "### Question: {input} \n### Answer: {output}",
-                    "source_max_len": 1024
+                    "source_max_len": 1024,
+                    "pad_to_max_len": false,
+                    "use_attention_mask": false
                 }
             }
         }
